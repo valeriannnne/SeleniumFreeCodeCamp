@@ -18,6 +18,10 @@ public class DatePickerMenuPage extends WidgetsPage{
         click(dayValue(day));
     }
 
+    public boolean isDayInMonth(String day){
+        return find(dayValue(day)).isDisplayed();
+    }
+
     public void clickSelectDate(){
         click(selectDateField);
     }
@@ -33,6 +37,4 @@ public class DatePickerMenuPage extends WidgetsPage{
     public void selectYear(String year){
         selectByVisibleText(yearDropDown, year);
     }
-
-    //https://youtu.be/QQliGCtqD2w?si=p16Sd9yv_JRHERWV&t=13095
 }
