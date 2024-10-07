@@ -8,6 +8,13 @@ import static utilities.JavaScriptUtility.scrollToElementJS;
 public class Alerts_Frames_WindowsPage extends HomePage {
 
     private By modalDialogsMenuItem = By.xpath("//*[@id='item-4']/span[text()='Modal Dialogs']");
+    private By alertsMenuItem = By.xpath("//*[@id='item-1']/span[text()='Alerts']");
+
+    public AlertsPage clickAlerts(){
+        scrollToElementJS(alertsMenuItem);
+        click(alertsMenuItem);
+        return new AlertsPage();
+    }
 
     public ModalDialogsPage clickModalDialogs(){
         scrollToElementJS(modalDialogsMenuItem);
