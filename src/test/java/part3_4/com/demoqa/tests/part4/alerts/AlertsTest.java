@@ -26,4 +26,16 @@ public class AlertsTest extends BaseTest {
         String expectedConfirmationResult = "You selected Cancel";
         Assert.assertEquals(actualConfirmationResult, expectedConfirmationResult, "\n You Did Not Select Cancel \n");
     }
+
+    public void testPromptAlert(){
+        String alertText = "Selenium With Java";
+        String expectedResult = "You entered " + alertText;
+
+        var alertsPage = homePage.goToAlertsFramesWindowsCard().clickAlerts();
+        alertsPage.clickPromptAlertButton();
+        setAlertText(alertText);
+        acceptAlert();
+        String actualResult = alertsPage.getPromptResult();
+        Assert.assertEquals(actualResult, expectedResult, "\n Actual and Expected Results Do Not Match \n");
+    }
 }
