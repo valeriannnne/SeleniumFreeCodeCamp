@@ -41,5 +41,9 @@ public class SwitchToUtility extends Utility{
         switchTo().frame(element);
     }
 
+    public static void switchToWindow(String handle){
+        switchTo().window(handle);
+    }
+
 
 }
